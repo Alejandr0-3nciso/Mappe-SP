@@ -12,7 +12,7 @@
         <link rel="stylesheet" href="css/leaflet-measure.css">
         <style>
         #map {
-            width: 1229px;
+            width: 1242px;
             height: 636px;
         }
         </style>
@@ -23,6 +23,7 @@
         </div>
         <script src="js/qgis2web_expressions.js"></script>
         <script src="js/leaflet.js"></script>
+        <script src="js/multi-style-layer.js"></script>
         <script src="js/leaflet.rotatedMarker.js"></script>
         <script src="js/leaflet.pattern.js"></script>
         <script src="js/leaflet-hash.js"></script>
@@ -49,7 +50,7 @@
         <script>
         var map = L.map('map', {
             zoomControl:true, maxZoom:28, minZoom:1
-        }).fitBounds([[45.474669109166484,9.220121453292892],[45.47958102543603,9.232421094150821]]);
+        }).fitBounds([[45.39069118562172,9.016417714490835],[45.548107078876576,9.413989833865587]]);
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
         var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
@@ -90,7 +91,7 @@
                         <td colspan="2">' + (feature.properties['Anno'] !== null ? autolinker.link(feature.properties['Anno'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2"><strong>Periodo</strong><br />' + (feature.properties['Periodo'] !== null ? autolinker.link(feature.properties['Periodo'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['Periodo'] !== null ? autolinker.link(feature.properties['Periodo'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <td colspan="2"><strong>DesLavori</strong><br />' + (feature.properties['DesLavori'] !== null ? autolinker.link(feature.properties['DesLavori'].toLocaleString()) : '') + '</td>\
@@ -265,6 +266,7 @@
             style: style_151_PROGRAMMAZIONE_2024_3_0,
         });
         bounds_group.addLayer(layer_151_PROGRAMMAZIONE_2024_3);
+        map.addLayer(layer_151_PROGRAMMAZIONE_2024_3);
         function pop_1piazze_4(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
@@ -602,11 +604,11 @@
             return {
                 pane: 'pane_5MMFOG_programmazione_9',
                 opacity: 1,
-                color: 'rgba(190,178,151,1.0)',
+                color: 'rgba(227,26,28,1.0)',
                 dashArray: '',
-                lineCap: 'square',
-                lineJoin: 'bevel',
-                weight: 1.0,
+                lineCap: 'round',
+                lineJoin: 'round',
+                weight: 7.0,
                 fillOpacity: 0,
                 interactive: true,
             }
@@ -624,6 +626,7 @@
             style: style_5MMFOG_programmazione_9_0,
         });
         bounds_group.addLayer(layer_5MMFOG_programmazione_9);
+        map.addLayer(layer_5MMFOG_programmazione_9);
         function pop_5piazze_10(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
@@ -670,6 +673,7 @@
             style: style_5piazze_10_0,
         });
         bounds_group.addLayer(layer_5piazze_10);
+        map.addLayer(layer_5piazze_10);
         function pop_6MMsedimestradale_programmazione_11(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
@@ -722,11 +726,11 @@
             return {
                 pane: 'pane_6MMsedimestradale_programmazione_11',
                 opacity: 1,
-                color: 'rgba(114,155,111,1.0)',
+                color: 'rgba(227,26,28,1.0)',
                 dashArray: '',
-                lineCap: 'square',
-                lineJoin: 'bevel',
-                weight: 1.0,
+                lineCap: 'round',
+                lineJoin: 'round',
+                weight: 7.0,
                 fillOpacity: 0,
                 interactive: true,
             }
@@ -744,10 +748,11 @@
             style: style_6MMsedimestradale_programmazione_11_0,
         });
         bounds_group.addLayer(layer_6MMsedimestradale_programmazione_11);
+        map.addLayer(layer_6MMsedimestradale_programmazione_11);
         function pop_6piazze_12(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['id'] !== null ? autolinker.link(feature.properties['id'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>id</strong><br />' + (feature.properties['id'] !== null ? autolinker.link(feature.properties['id'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <td colspan="2"><strong>Via</strong><br />' + (feature.properties['Via'] !== null ? autolinker.link(feature.properties['Via'].toLocaleString()) : '') + '</td>\
@@ -790,6 +795,7 @@
             style: style_6piazze_12_0,
         });
         bounds_group.addLayer(layer_6piazze_12);
+        map.addLayer(layer_6piazze_12);
         function pop_8CONCOMITANZA_UNR_MM_13(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
@@ -805,7 +811,7 @@
                         <td colspan="2"><strong>Note</strong><br />' + (feature.properties['Note'] !== null ? autolinker.link(feature.properties['Note'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['SHAPE_Leng'] !== null ? autolinker.link(feature.properties['SHAPE_Leng'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>SHAPE_Leng</strong><br />' + (feature.properties['SHAPE_Leng'] !== null ? autolinker.link(feature.properties['SHAPE_Leng'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['SHAPE_Area'] !== null ? autolinker.link(feature.properties['SHAPE_Area'].toLocaleString()) : '') + '</td>\
@@ -820,31 +826,36 @@
         function style_8CONCOMITANZA_UNR_MM_13_0() {
             return {
                 pane: 'pane_8CONCOMITANZA_UNR_MM_13',
+                interactive: true,
+            }
+        }
+        function style_8CONCOMITANZA_UNR_MM_13_1() {
+            return {
+                pane: 'pane_8CONCOMITANZA_UNR_MM_13',
                 opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
+                color: 'rgba(0,0,0,1.0)',
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
                 weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(141,90,153,1.0)',
+                fillOpacity: 0,
                 interactive: true,
             }
         }
         map.createPane('pane_8CONCOMITANZA_UNR_MM_13');
         map.getPane('pane_8CONCOMITANZA_UNR_MM_13').style.zIndex = 413;
         map.getPane('pane_8CONCOMITANZA_UNR_MM_13').style['mix-blend-mode'] = 'normal';
-        var layer_8CONCOMITANZA_UNR_MM_13 = new L.geoJson(json_8CONCOMITANZA_UNR_MM_13, {
+        var layer_8CONCOMITANZA_UNR_MM_13 = new L.geoJson.multiStyle(json_8CONCOMITANZA_UNR_MM_13, {
             attribution: '',
             interactive: true,
             dataVar: 'json_8CONCOMITANZA_UNR_MM_13',
             layerName: 'layer_8CONCOMITANZA_UNR_MM_13',
             pane: 'pane_8CONCOMITANZA_UNR_MM_13',
             onEachFeature: pop_8CONCOMITANZA_UNR_MM_13,
-            style: style_8CONCOMITANZA_UNR_MM_13_0,
+            styles: [style_8CONCOMITANZA_UNR_MM_13_0,style_8CONCOMITANZA_UNR_MM_13_1,]
         });
         bounds_group.addLayer(layer_8CONCOMITANZA_UNR_MM_13);
+        map.addLayer(layer_8CONCOMITANZA_UNR_MM_13);
         function pop_8piazze_14(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
@@ -867,14 +878,14 @@
             return {
                 pane: 'pane_8piazze_14',
                 opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
+                color: 'rgba(247,247,247,1.0)',
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
                 weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(255,158,23,1.0)',
+                fillColor: 'rgba(50,150,3,1.0)',
                 interactive: true,
             }
         }
@@ -891,6 +902,7 @@
             style: style_8piazze_14_0,
         });
         bounds_group.addLayer(layer_8piazze_14);
+        map.addLayer(layer_8piazze_14);
             var title = new L.Control();
             title.onAdd = function (map) {
                 this._div = L.DomUtil.create('div', 'info');
